@@ -1,5 +1,7 @@
 # Painel BI · Rendimento Agrícola Global
 
+🔗 **Acesse o painel online:** https://dashboard-gules-ten-20.vercel.app
+
 Painel de Business Intelligence (Angular 20 + ECharts) sobre rendimento de 10 culturas em 101 países (FAO / World Bank, 1990–2013).
 
 ## Arquitetura (pipeline de BI)
@@ -36,4 +38,12 @@ Com "Todas" as culturas, a métrica é o **índice relativo** (100 = média mund
 python3 -m venv .venv && .venv/bin/pip install pandas geopandas pyogrio
 .venv/bin/python etl/build_dataset.py      # regenera os JSON
 cd dashboard && npm install && npm start   # http://localhost:4200
+```
+
+## Deploy
+
+Hospedado na Vercel a partir da pasta `dashboard/` (configuração em `dashboard/vercel.json`):
+
+```bash
+cd dashboard && npx vercel deploy --prod
 ```
