@@ -1,0 +1,61 @@
+<header class="topbar">
+  <div class="brand">
+    <h1>Rendimento Agrícola Global</h1>
+    <p>Painel de Business Intelligence · {{ data.raw()?.meta?.source ?? 'FAO / World Bank' }}</p>
+  </div>
+  <button type="button" class="theme" (click)="theme.toggle()" [attr.aria-label]="'Alternar para tema ' + (theme.mode() === 'dark' ? 'claro' : 'escuro')">
+    {{ theme.mode() === 'dark' ? '☀ Claro' : '☾ Escuro' }}
+  </button>
+</header>
+
+<main>
+  @if (data.loading()) {
+    <div class="state">Carregando dados…</div>
+  } @else if (data.error(); as err) {
+    <div class="state bad">{{ err }}</div>
+  } @else {
+    <!-- 1 · Filtros globais (slice & dice) -->
+    <section class="filters-row">
+      <app-filter-bar />
+    </section>
+
+    @if (!data.filtered().length) {
+      <div class="state">
+        Nenhuma observação para a combinação de filtros selecionada.
+        <button type="button" class="theme" (click)="data.resetFilters()">Limpar filtros</button>
+      </div>
+    } @else {
+      <!-- 2 · Visão geral: KPIs -->
+      <section class="kpis">
+        @for (k of data.kpis(); track k.id) {
+          <app-kpi-card [kpi]="k" />
+        }
+      </section>
+
+      <!-- 3 · Geografia + narrativa -->
+      <app-world-map />
+
+      <!-- 4 · Comparação e tendência -->
+      <section class="row two">
+        <app-ranking-chart />
+        <app-trend-chart />
+      </section>
+
+      <!-- 5 · Oportunidade e resultado: onde agir? -->
+      <section class="row three">
+        <app-performance-donut />
+        <app-crop-growth />
+        <app-crop-potential />
+      </section>
+
+      <!-- 6 · Detalhe sob demanda -->
+      <app-country-table />
+
+      <app-data-model />
+    }
+  }
+</main>
+
+<footer class="foot">
+  Dados: FAO (rendimento, pesticidas) e World Bank (chuva, temperatura), 1990–2013 · Geometrias: Natural Earth 1:110m
+</footer>

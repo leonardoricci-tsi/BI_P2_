@@ -1,0 +1,102 @@
+id,name,iso3,iso2,geoName,continent,region,lat,lon
+0,Albania,ALB,al,Albania,Europa,Southern Europe,41.248,19.968
+1,Algeria,DZA,dz,Algeria,África,Northern Africa,27.916,0.526
+2,Angola,AGO,ao,Angola,África,Middle Africa,-11.88,18.81
+3,Argentina,ARG,ar,Argentina,América do Sul,South America,-37.239,-64.081
+4,Armenia,ARM,am,Armenia,Ásia,Western Asia,39.952,45.064
+5,Australia,AUS,au,Australia,Oceania,Australia and New Zealand,-24.841,133.059
+6,Austria,AUT,at,Austria,Europa,Western Europe,47.919,14.953
+7,Azerbaijan,AZE,az,Azerbaijan,Ásia,Western Asia,40.038,47.635
+8,Bahamas,BHS,bs,Bahamas,América do Norte,Caribbean,26.685,-78.396
+9,Bahrain,BHR,bh,,Ásia,Western Asia,26.07,50.55
+10,Bangladesh,BGD,bd,Bangladesh,Ásia,Southern Asia,23.564,89.876
+11,Belarus,BLR,by,Belarus,Europa,Eastern Europe,53.706,27.786
+12,Belgium,BEL,be,Belgium,Europa,Western Europe,50.58,4.737
+13,Botswana,BWA,bw,Botswana,África,Southern Africa,-22.46,24.31
+14,Brazil,BRA,br,Brazil,América do Sul,South America,-14.074,-49.712
+15,Bulgaria,BGR,bg,Bulgaria,Europa,Eastern Europe,42.739,25.139
+16,Burkina Faso,BFA,bf,Burkina Faso,África,Western Africa,12.241,-1.276
+17,Burundi,BDI,bi,Burundi,África,Eastern Africa,-3.464,29.957
+18,Cameroon,CMR,cm,Cameroon,África,Middle Africa,7.226,13.492
+19,Canada,CAN,ca,Canada,América do Norte,Northern America,56.702,-110.244
+20,Central African Republic,CAF,cf,Central African Rep.,África,Middle Africa,6.763,20.479
+21,Chile,CHL,cl,Chile,América do Sul,South America,-54.016,-69.838
+22,Colombia,COL,co,Colombia,América do Sul,South America,3.969,-72.486
+23,Croatia,HRV,hr,Croatia,Europa,Southern Europe,44.545,15.584
+24,Denmark,DNK,dk,Denmark,Europa,Northern Europe,56.324,9.461
+25,Dominican Republic,DOM,do,Dominican Rep.,América do Norte,Caribbean,18.701,-70.13
+26,Ecuador,ECU,ec,Ecuador,América do Sul,South America,-1.763,-78.279
+27,Egypt,EGY,eg,Egypt,África,Northern Africa,26.895,29.37
+28,El Salvador,SLV,sv,El Salvador,América do Norte,Central America,13.815,-88.92
+29,Eritrea,ERI,er,Eritrea,África,Eastern Africa,15.198,38.296
+30,Estonia,EST,ee,Estonia,Europa,Northern Europe,58.498,25.562
+31,Finland,FIN,fi,Finland,Europa,Northern Europe,65.03,27.373
+32,France,FRA,fr,France,Europa,Western Europe,46.895,2.099
+33,Germany,DEU,de,Germany,Europa,Western Europe,51.431,10.432
+34,Ghana,GHA,gh,Ghana,África,Western Africa,7.816,-1.087
+35,Greece,GRC,gr,Greece,Europa,Southern Europe,39.08,21.806
+36,Guatemala,GTM,gt,Guatemala,América do Norte,Central America,15.792,-90.334
+37,Guinea,GIN,gn,Guinea,África,Western Africa,9.951,-9.658
+38,Guyana,GUY,gy,Guyana,América do Sul,South America,4.913,-58.845
+39,Haiti,HTI,ht,Haiti,América do Norte,Caribbean,18.944,-72.147
+40,Honduras,HND,hn,Honduras,América do Norte,Central America,14.488,-87.228
+41,Hungary,HUN,hu,Hungary,Europa,Eastern Europe,47.245,19.103
+42,India,IND,in,India,Ásia,Southern Asia,21.872,79.179
+43,Indonesia,IDN,id,Indonesia,Ásia,South-Eastern Asia,-0.179,113.269
+44,Iraq,IRQ,iq,Iraq,Ásia,Western Asia,33.198,42.415
+45,Ireland,IRL,ie,Ireland,Europa,Northern Europe,53.51,-7.807
+46,Italy,ITA,it,Italy,Europa,Southern Europe,42.558,12.631
+47,Jamaica,JAM,jm,Jamaica,América do Norte,Caribbean,18.024,-77.152
+48,Japan,JPN,jp,Japan,Ásia,Eastern Asia,36.093,138.349
+49,Kazakhstan,KAZ,kz,Kazakhstan,Ásia,Central Asia,48.069,66.312
+50,Kenya,KEN,ke,Kenya,África,Eastern Africa,0.312,37.513
+51,Latvia,LVA,lv,Latvia,Europa,Northern Europe,56.895,24.504
+52,Lebanon,LBN,lb,Lebanon,Ásia,Western Asia,33.865,35.795
+53,Lesotho,LSO,ls,Lesotho,África,Southern Africa,-29.501,28.244
+54,Libya,LBY,ly,Libya,África,Northern Africa,26.303,17.259
+55,Lithuania,LTU,lt,Lithuania,Europa,Northern Europe,55.091,24.128
+56,Madagascar,MDG,mg,Madagascar,África,Eastern Africa,-18.647,46.669
+57,Malawi,MWI,mw,Malawi,África,Eastern Africa,-13.175,33.668
+58,Malaysia,MYS,my,Malaysia,Ásia,South-Eastern Asia,3.833,102.072
+59,Mali,MLI,ml,Mali,África,Western Africa,17.955,-0.701
+60,Mauritania,MRT,mr,Mauritania,África,Western Africa,21.163,-11.493
+61,Mauritius,MUS,mu,,África,Eastern Africa,-20.35,57.55
+62,Mexico,MEX,mx,Mexico,América do Norte,Central America,23.599,-102.25
+63,Montenegro,MNE,me,Montenegro,Europa,Southern Europe,42.75,19.396
+64,Morocco,MAR,ma,Morocco,África,Northern Africa,28.49,-9.983
+65,Mozambique,MOZ,mz,Mozambique,África,Eastern Africa,-18.319,34.697
+66,Namibia,NAM,na,Namibia,África,Southern Africa,-23.255,17.146
+67,Nepal,NPL,np,Nepal,Ásia,Southern Asia,28.31,83.444
+68,Netherlands,NLD,nl,Netherlands,Europa,Western Europe,52.04,5.398
+69,New Zealand,NZL,nz,New Zealand,Oceania,Australia and New Zealand,-38.305,176.517
+70,Nicaragua,NIC,ni,Nicaragua,América do Norte,Central America,12.89,-85.574
+71,Niger,NER,ne,Niger,África,Western Africa,17.39,9.774
+72,Norway,NOR,no,Norway,Europa,Northern Europe,79.958,22.682
+73,Pakistan,PAK,pk,Pakistan,Ásia,Southern Asia,30.358,70.093
+74,Papua New Guinea,PNG,pg,Papua New Guinea,Oceania,Melanesia,-6.668,144.226
+75,Peru,PER,pe,Peru,América do Sul,South America,-9.248,-75.875
+76,Poland,POL,pl,Poland,Europa,Eastern Europe,51.884,19.076
+77,Portugal,PRT,pt,Portugal,Europa,Southern Europe,39.511,-8.368
+78,Qatar,QAT,qa,Qatar,Ásia,Western Asia,25.349,51.179
+79,Romania,ROU,ro,Romania,Europa,Eastern Europe,46.036,24.212
+80,Rwanda,RWA,rw,Rwanda,África,Eastern Africa,-1.957,30.031
+81,Saudi Arabia,SAU,sa,Saudi Arabia,Ásia,Western Asia,24.265,44.553
+82,Senegal,SEN,sn,Senegal,África,Western Africa,14.495,-14.729
+83,Slovenia,SVN,si,Slovenia,Europa,Southern Europe,46.127,14.732
+84,South Africa,ZAF,za,South Africa,África,Southern Africa,-28.409,26.148
+85,Spain,ESP,es,Spain,Europa,Southern Europe,39.918,-3.52
+86,Sri Lanka,LKA,lk,Sri Lanka,Ásia,Southern Asia,7.862,80.684
+87,Sudan,SDN,sd,Sudan,África,Northern Africa,15.278,29.616
+88,Suriname,SUR,sr,Suriname,América do Sul,South America,3.84,-56.032
+89,Sweden,SWE,se,Sweden,Europa,Northern Europe,62.275,14.786
+90,Switzerland,CHE,ch,Switzerland,Europa,Western Europe,46.81,8.287
+91,Tajikistan,TJK,tj,Tajikistan,Ásia,Central Asia,38.754,71.04
+92,Thailand,THA,th,Thailand,Ásia,South-Eastern Asia,13.037,101.663
+93,Tunisia,TUN,tn,Tunisia,África,Northern Africa,33.942,8.914
+94,Turkey,TUR,tr,Turkey,Ásia,Western Asia,38.634,35.455
+95,Uganda,UGA,ug,Uganda,África,Eastern Africa,1.38,32.547
+96,Ukraine,UKR,ua,Ukraine,Europa,Eastern Europe,48.805,30.981
+97,United Kingdom,GBR,gb,United Kingdom,Europa,Northern Europe,54.225,-1.753
+98,Uruguay,URY,uy,Uruguay,América do Sul,South America,-32.387,-55.819
+99,Zambia,ZMB,zm,Zambia,África,Eastern Africa,-13.08,25.37
+100,Zimbabwe,ZWE,zw,Zimbabwe,África,Eastern Africa,-19.004,29.322
