@@ -17,7 +17,7 @@ import {
   TrendSeriesDto,
   YieldFact,
 } from '../models/dto';
-import { cagr, groupBy, mean, quantile, std } from '../utils/stats';
+import { cagr, groupBy, mean, quantile, spearman, std } from '../utils/stats';
 
 /**
  * Camada semântica do painel: carrega o esquema estrela, resolve os
@@ -417,6 +417,60 @@ export class BiDataService {
     };
   });
 
+  // ─────────── Fatores climáticos (relacionamento fato_producao ↔ fato_clima) ───────────
+  /**
+   * ρ de Spearman entre rendimento (t/ha) e cada fator, por cultura.
+   * Cada observação é país × ano: o clima vem de fato_clima pela chave (countryId, year).
+   * Usa o escopo sem o filtro de cultura (linhas = todas as culturas; a filtrada é destacada).
+   */
+  readonly cropCorrelations = computed(() => {
+    const factors = ['rain', 'temp', 'pest'] as const;
+    return [...groupBy(this.scopedAllCrops().filter((f) => f.climate), (f) => f.crop.id)]
+      .map(([, g]) => {
+        const y = g.map((f) => f.yieldT);
+        const rho = Object.fromEntries(factors.map((k) => [k, g.length >= MIN_CORR_N ? spearman(g.map((f) => f.climate![k]), y) : NaN])) as Record<ClimateFactor, number>;
+        return { crop: g[0].crop, n: g.length, ...rho };
+      })
+      .sort((a, b) => a.crop.namePt.localeCompare(b.crop.namePt));
+  });
+
+  /** ρ de Spearman entre o fator e a métrica no nível país (pontos da dispersão). */
+  countryCorrelation(factor: ClimateFactor): { rho: number; n: number } {
+    const pts = this.countryAgg().filter((a) => a[factor] != null);
+    return { rho: pts.length >= MIN_CORR_N ? spearman(pts.map((a) => a[factor]!), pts.map((a) => a.value)) : NaN, n: pts.length };
+  }
+
+  // ─────────── Distribuição por continente (boxplot) ───────────
+  /**
+   * Distribuição da métrica entre os países de cada continente.
+   * Ignora o filtro de continente (para comparar todos) e destaca o continente filtrado.
+   */
+  readonly continentDistribution = computed(() => {
+    const { cropId } = this.filters();
+    const ids = this.tierIds();
+    const facts = this.facts().filter((f) => this.inYears(f) && (cropId == null || f.crop.id === cropId) && (ids == null || ids.has(f.country.id)));
+    const agg = this.aggregateCountries(facts, this.metric());
+    return [...groupBy(agg, (a) => a.country.continent)]
+      .map(([continent, rows]) => {
+        const s = rows.map((r) => r.value).sort((a, b) => a - b);
+        const q1 = quantile(s, 0.25), q2 = quantile(s, 0.5), q3 = quantile(s, 0.75);
+        const iqr = q3 - q1;
+        const inside = s.filter((v) => v >= q1 - 1.5 * iqr && v <= q3 + 1.5 * iqr);
+        return {
+          continent,
+          n: s.length,
+          box: [inside[0], q1, q2, q3, inside.at(-1)!] as [number, number, number, number, number],
+          outliers: rows.filter((r) => r.value < q1 - 1.5 * iqr || r.value > q3 + 1.5 * iqr),
+          countries: rows,
+        };
+      })
+      .sort((a, b) => b.box[2] - a.box[2]);
+  });
+
+  toggleContinent(c: string): void {
+    this.setFilter({ continent: this.filters().continent === c ? null : c });
+  }
+
   // ─────────── Perfil (modal do país) ───────────
   profile(countryId: number): CountryProfileDto | null {
     const agg = this.ctxAgg();
@@ -460,5 +514,9 @@ export class BiDataService {
   });
 }
 
-export const tierOf = (index: number): Tier => (index >= 110 ? 'above' : index <= 90 ? 'below' : 'avg');
+export type ClimateFactor = 'rain' | 'temp' | 'pest';
+/** Mínimo de observações para reportar uma correlação. */
+const MIN_CORR_N = 8;
+
+export const tierOf =(index: number): Tier => (index >= 110 ? 'above' : index <= 90 ? 'below' : 'avg');
 export const TIER_LABEL: Record<Tier, string> = { above: 'Acima da média', avg: 'Na média', below: 'Abaixo da média' };

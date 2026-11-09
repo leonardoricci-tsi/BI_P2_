@@ -11,10 +11,13 @@ import { CropGrowth } from './components/crop-growth';
 import { PerformanceDonut } from './components/performance-donut';
 import { CountryTable } from './components/country-table';
 import { DataModel } from './components/data-model';
+import { ClimateScatter } from './components/climate-scatter';
+import { CorrelationHeatmap } from './components/correlation-heatmap';
+import { ContinentBoxplot } from './components/continent-boxplot';
 
 @Component({
   selector: 'app-root',
-  imports: [FilterBar, KpiCard, WorldMap, TrendChart, RankingChart, CropPotential, CropGrowth, PerformanceDonut, CountryTable, DataModel],
+  imports: [FilterBar, KpiCard, WorldMap, TrendChart, RankingChart, CropPotential, CropGrowth, PerformanceDonut, CountryTable, DataModel, ClimateScatter, CorrelationHeatmap, ContinentBoxplot],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

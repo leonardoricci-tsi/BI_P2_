@@ -48,7 +48,16 @@
         <app-crop-potential />
       </section>
 
-      <!-- 6 · Detalhe sob demanda -->
+      <!-- 6 · Diagnóstico: o que acompanha o rendimento? (fato_producao ↔ fato_clima) -->
+      <section class="row two">
+        <app-climate-scatter />
+        <app-correlation-heatmap />
+      </section>
+
+      <!-- 7 · Distribuição: quão desigual é cada continente? -->
+      <app-continent-boxplot />
+
+      <!-- 8 · Detalhe sob demanda -->
       <app-country-table />
 
       <app-data-model />
