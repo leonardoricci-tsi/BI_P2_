@@ -59,12 +59,12 @@ Todos os KPIs são recalculados em `services/bi-data.service.ts` sempre que um f
 
 ## Divisão de responsabilidades
 
-| Integrante | Responsabilidade |
+| Integrantes | Responsabilidade |
 |---|---|
-| _Nome 1_ | Preparação dos dados e ETL (`etl/build_dataset.py`), modelo dimensional |
-| _Nome 2_ | Camada semântica e KPIs (`bi-data.service.ts`), validação dos cálculos |
-| _Nome 3_ | Visualizações e interatividade (componentes Angular / ECharts) |
-| _Nome 4_ | Validação do painel, deploy na Vercel e apresentação final |
+| Leonardo Ricci e Marcio Schinor | Preparação dos dados e ETL (`etl/build_dataset.py`), modelo dimensional |
+| Luis Gustavo e João Victor | Camada semântica e KPIs (`bi-data.service.ts`), validação dos cálculos |
+| Igor Rueda | Visualizações e interatividade (componentes Angular / ECharts) |
+| Amabili Glaff | Validação do painel, deploy na Vercel e apresentação final |
 
 ## Estrutura da apresentação final
 
