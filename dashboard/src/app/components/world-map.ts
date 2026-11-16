@@ -151,7 +151,10 @@ export class WorldMap {
     const values = agg.map((a) => a.value).sort((a, b) => a - b);
     const breaks = [0.2, 0.4, 0.6, 0.8].map((q) => quantile(values, q));
     const edges = [values[0], ...breaks, values.at(-1)!];
-    const ramp = [t.sequential[0], t.sequential[2], t.sequential[3], t.sequential[4], t.sequential[6]];
+    // Classe mais alta = tom mais escuro (a rampa sequencial muda de sentido entre os temas)
+    const lum = (hex: string) => parseInt(hex.slice(1, 3), 16) + parseInt(hex.slice(3, 5), 16) + parseInt(hex.slice(5, 7), 16);
+    const seq = lum(t.sequential[0]) > lum(t.sequential[6]) ? t.sequential : [...t.sequential].reverse();
+    const ramp = [seq[0], seq[2], seq[3], seq[4], seq[6]];
     const pieces = ramp.map((color, i) => ({
       min: edges[i],
       max: i === 4 ? edges[5] + 1e-9 : edges[i + 1],
